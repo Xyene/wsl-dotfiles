@@ -1,1 +1,64 @@
-/usr/local/bin/walternate
+#!/usr/bin/python
+import time
+import os
+import ephem
+import datetime
+
+BG_SOURCE = '/mnt/backgrounds/{segment}{number}.png'
+POLL_TIME_INTERVAL = 10 # seconds
+THEMES = {
+    'day': 'NumixBlue',
+    'afternoon': 'NumixBlue',
+    'night': 'NumixBlue-Dark'
+}
+LATITUDE = 43.653226
+LONGITUDE = -79.383184
+ELEVATION = 76
+
+
+def hours_until(time):
+    now = datetime.datetime.utcnow()
+    if now < time:
+        return (time - now).seconds / 3600.0
+    return (now - time).seconds / -3600.0
+
+
+def get_day_segment():
+    user = ephem.Observer()
+    user.lat = str(LATITUDE)
+    user.lon = str(LONGITUDE)
+    user.date = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
+    user.elevation = ELEVATION
+    user.horizon = '-6'
+    user.pressure = 0
+
+    sun = ephem.Sun()
+    sun.compute(user)
+
+    next_sunrise_datetime = user.next_rising(sun, use_center=True).datetime()
+    next_sunset_datetime = user.next_setting(sun, use_center=True).datetime()
+    previous_sunrise_datetime = user.previous_rising(sun, use_center=True).datetime()
+    previous_sunset_datetime = user.previous_setting(sun, use_center=True).datetime()
+
+    if hours_until(next_sunset_datetime) < 2 or hours_until(next_sunrise_datetime) < 2 or hours_until(previous_sunrise_datetime) > -2:
+       return 'afternoon'
+
+    if next_sunset_datetime < next_sunrise_datetime:
+        return 'day'
+
+    return 'night'
+
+
+def update_wallpaper():
+    number = time.localtime().tm_min / 10 + 1
+    segment = get_day_segment()
+    source = BG_SOURCE.format(segment=segment, number=number)
+
+    print 'Switching to %s...' % source
+    os.system('gsettings set org.gnome.desktop.background picture-uri "file://%s"' % source)
+    os.system("gsettings set org.gnome.desktop.interface gtk-theme '%s'" % THEMES[segment])
+
+
+while True:
+    update_wallpaper()
+    time.sleep(POLL_TIME_INTERVAL)
