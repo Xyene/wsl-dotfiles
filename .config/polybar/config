@@ -1,0 +1,139 @@
+[colors]
+background = #cc000000
+background-alt = #cc000000
+foreground = #dfdfdf
+foreground-alt = #555
+primary = #268bd2
+; nice orange: #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[bar/i3bar]
+width = 100%
+height = 50
+radius = 0.0
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 7
+line-color = #268bd2
+
+border-size = 0
+border-top-size = ${bar/i3bar.line-size}
+border-color = ${colors.background}
+
+padding-left = 1
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = fixed:normal:pixelsize=22
+
+modules-left = i3
+modules-center = xwindow
+modules-right = filesystem cpu memory
+
+; tray probably looks terrible but I don't have any apps on my tray to see it
+tray-position = left
+tray-padding = 2
+tray-transparent = false
+tray-background = #000
+
+[module/xwindow]
+type = internal/xwindow
+label = %title%
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %free%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+label-mounted-underline = #f00
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+label-occupied = %index%
+label-occupied-padding = 2
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-empty = %index%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 2
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline = ${colors.primary}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-background = ${colors.alert}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${colors.background-alt}
+label-urgent-padding = 2
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #ffb52a
+label = %percentage%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #00f900
+;#4bffdc
+label = %gb_used%
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = xor
+;compositing-border = over
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini

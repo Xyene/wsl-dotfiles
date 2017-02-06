@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# meant to be run with `bash -c "/path/to/wlaunch"` when running from e.g. a Windows shortcut
+
+# explicitly needed when launching with bash -c from Windows
+source ~/.bashrc
+# gnome-settings-daemon would work too, but it segfaults under WSL
+# this is needed for hidpi to work nicely in GTK apps
+unity-settings-daemon &
+i3

@@ -1,0 +1,45 @@
+Xft.antialias: true
+Xft.hinting:   true
+Xft.rgba:      rgb
+Xft.hintstyle: hintfull
+Xft.dpi:       190
+
+rofi.width:                          50
+rofi.lines:                          15
+rofi.columns:                        1
+rofi.font:                           DejaVu Sans Mono 11
+rofi.fg:                             #002B36
+rofi.bg:                             #FDF6E3
+rofi.fg-active:                      #268BD2
+rofi.fg-urgent:                      #DC322F
+rofi.hlfg-active:                    #FDF6E3
+rofi.hlfg-urgent:                    #FDF6E3
+rofi.bg-active:                      #FDF6E3
+rofi.bg-urgent:                      #FDF6E3
+rofi.hlbg-active:                    #268BD2
+rofi.hlbg-urgent:                    #DC322F
+rofi.bgalt:                          #FDF6E3
+rofi.hlfg:                           #EEE8D5
+rofi.hlbg:                           #586E75
+rofi.bc:                             #002B36
+rofi.color-enabled:                  true
+
+rofi.color-normal:                   argb:0000000, #ffffff, argb:0000000, #268bd2, #ffffff
+rofi.color-urgent:                   argb:0000000, #f3843d, argb:0000000, #268bd2, #ffc39c
+rofi.color-active:                   argb:0000000, #268bd2, argb:0000000, #268bd2, #205171
+rofi.color-window:                   argb:b2000000, #268bd2, #268bd2
+
+rofi.bw:                             6
+rofi.padding:                        15
+rofi.lazy-filter-limit:              15000
+rofi.line-margin:                    5
+rofi.separator-style:                solid
+rofi.hide-scrollbar:                 true
+rofi.fullscreen:                     false
+rofi.dpi:                            220
+
+rofi.kb-row-left:                    Control+Page_Up,Control+Left
+rofi.kb-row-right:                   Control+Page_Down,Control+Right
+rofi.kb-row-up:                      Up,Control+p,Shift+Tab,Control+Up
+rofi.kb-row-down:                    Down,Control+n,Control+Down
+

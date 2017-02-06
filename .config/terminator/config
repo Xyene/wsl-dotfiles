@@ -1,0 +1,45 @@
+[global_config]
+  enabled_plugins = CustomCommandsMenu, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  homogeneous_tabbar = False
+  inactive_color_offset = 1.0
+  putty_paste_style = True
+  scroll_tabbar = True
+  tab_position = hidden
+  title_font = Sans 17
+  title_hide_sizetext = True
+  title_inactive_bg_color = "#222222"
+  title_inactive_fg_color = "#888888"
+  title_transmit_bg_color = "#268bd2"
+  title_use_system_font = False
+[keybindings]
+  go_down = <Primary>Down
+  go_left = <Primary>Left
+  go_right = <Primary>Right
+  go_up = <Primary>Up
+  hide_window = F1
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.8
+    background_type = transparent
+    copy_on_selection = True
+    cursor_color = "#aaaaaa"
+    custom_command = /bin/bash
+    font = Ubuntu Mono 26
+    icon_bell = False
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_custom_command = True
+  [[dropdown]]
+    scrollback_lines = 10000
+    show_titlebar = False
