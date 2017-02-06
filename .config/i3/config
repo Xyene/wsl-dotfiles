@@ -1,8 +1,8 @@
 font pango:DejaVu Sans Mono 9
 
 client.focused	#268bd2   #268bd2   #ffffff   #268bd2  #268bd2
-bindsym Mod1+d exec rofi -padding 15 -line-margin 5 -fake-transparency -show run -font Deja\ Vu\ Sans\ Mono\ 11 -bw 7 -dpi 220 -hide-scrollbar -separator-style solid
-bindsym Mod1+g exec rofi -padding 15 -line-margin 5 -fake-transparency -show ssh -font Deja\ Vu\ Sans\ Mono\ 11 -bw 7 -dpi 220 -hide-scrollbar -separator-style solid
+bindsym Mod1+d exec rofi -show run
+bindsym Mod1+g exec rofi -show ssh
 # start Windows cmd over SSH
 bindsym Mod1+Shift+Return exec cmd
 
