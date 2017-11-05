@@ -4,12 +4,6 @@ echo
 export PULSE_SERVER=tcp:localhost
 export DISPLAY=:0
 
-horribly_mutilated_sudo() {
-    sudo -S "$@"
-}
-
-alias sudo=horribly_mutilated_sudo
-
 alias nano="nano -ET4"
 
 # WSL starts in mounted %userprofile%, so just switch to real home
