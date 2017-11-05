@@ -1,0 +1,3 @@
+#!/bin/bash
+pkill polybar
+polybar i3bar
