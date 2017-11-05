@@ -14,16 +14,12 @@ Included are configuration files and scripts for:
 
 ## Screenshots
 
-![](https://i.imgur.com/X5fdyWV.png)
+![](https://i.imgur.com/ImRRhRZ.jpg)
 
 ![](https://i.imgur.com/dn2HI6v.png)
 
+![](https://i.imgur.com/7CB2y1D.jpg)
+
 ![](https://i.imgur.com/vVw549M.jpg)
 
-![](https://i.imgur.com/yozg3VS.png)
-
-![](https://i.imgur.com/32yRZve.jpg)
-
 ![](https://i.imgur.com/MyKg0fO.jpg)
-
-![](https://i.imgur.com/yCkRMKv.png)
