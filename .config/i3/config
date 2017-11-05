@@ -3,10 +3,6 @@ font pango:DejaVu Sans Mono 9
 client.focused	#268bd2   #268bd2   #ffffff   #268bd2  #268bd2
 bindsym Mod1+d exec rofi -show run
 bindsym Mod1+g exec rofi -show ssh
-# start Windows cmd over SSH
-bindsym Mod1+Shift+Return exec cmd
-
-for_window [title="^.*"] border pixel 4
 
 gaps inner 20
 gaps outer 5
@@ -136,28 +132,8 @@ mode "resize" {
 
 bindsym Mod1+r mode "resize"
 
-bar {
-    i3bar_command polybar i3bar # i3bar -t
-	tray_output primary
-
-    colors {
-        # Whole color settings
-        #background #99999999
-        #statusline #ffffff
-        #separator  #1e1e1e
-
-        # Type             border  background font
-        #focused_workspace  #1e1e1e #1e1e1e #cf6a4c
-        #active_workspace   #1e1e1e #222222 #cf6a4c
-        #inactive_workspace #1e1e1e #1e1e1e #888888
-        #urgent_workspace   #aa0000 #990000 #ffffff
-    }
-
-}
-
-
-exec hsetroot -solid black
-exec --no-startup-id compton --paint-on-overlay
-exec_always xrdb -load ~/.Xresources
-exec_always pkill polybar
-exec walternate
+exec --no-startup-id exec hsetroot -solid black
+exec --no-startup-id exec compton --paint-on-overlay
+exec_always --no-startup-id exec xrdb -load ~/.Xresources
+exec_always --no-startup-id exec ~/.scripts/polylaunch
+exec --no-startup-id exec ~/.scripts/walternate
