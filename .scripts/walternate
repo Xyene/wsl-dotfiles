@@ -4,7 +4,7 @@ import os
 import ephem
 import datetime
 
-BG_SOURCE = '/mnt/backgrounds/{segment}{number}.png'
+BG_SOURCE = '/mnt/c/Users/Tudor Brindus/backgrounds/{segment}/'
 POLL_TIME_INTERVAL = 10 # seconds
 THEMES = {
     'day': 'NumixBlue',
@@ -50,13 +50,19 @@ def get_day_segment():
 
 
 def update_wallpaper():
-    number = time.localtime().tm_min / 10 + 1
     segment = get_day_segment()
-    source = BG_SOURCE.format(segment=segment, number=number)
+    segment = 'night'
+    source = BG_SOURCE.format(segment=segment)
+    imgs = os.listdir(source)
+    print imgs
+    number = int(time.localtime().tm_min / (60.0 / len(imgs)))
+    print time.localtime().tm_min, 60.0/len(imgs)
+    source = os.path.join(source, imgs[number])
 
     print 'Switching to %s...' % source
-    os.system('gsettings set org.gnome.desktop.background picture-uri "file://%s"' % source)
-    os.system("gsettings set org.gnome.desktop.interface gtk-theme '%s'" % THEMES[segment])
+    os.system('feh --bg-scale "%s"' % source)
+#    os.system('gsettings set org.gnome.desktop.background picture-uri "file://%s"' % source)
+#    os.system("gsettings set org.gnome.desktop.interface gtk-theme '%s'" % THEMES[segment])
 
 
 while True:
