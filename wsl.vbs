@@ -3,10 +3,6 @@
 '
 ' You may need to change this to reflect your VcXsrv install path as well as screen resolution.
 
-Set vcxsrvShell = CreateObject("WScript.Shell" ) 
-vcxsrvShell.Run """C:\Program Files\VcXsrv\vcxsrv.exe"" -nodecoration -screen 0 3840x2160@0"	
-Set vcxsrvShell = Nothing 
-
-Set wslShell = CreateObject("WScript.Shell" ) 
-wslShell.Run "ubuntu -c ""~/.scripts/wlaunch""", 0
-Set wslShell = Nothing 
+Set shell = CreateObject("WScript.Shell" ) 
+shell.Run """C:\Program Files\VcXsrv\vcxsrv.exe"" :0 -screen 0 @1 -nodecoration -wgl"	
+shell.Run "ubuntu -c ""~/.scripts/wlaunch""", 0
