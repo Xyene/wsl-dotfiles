@@ -4,7 +4,7 @@ import os
 import ephem
 import datetime
 
-BG_SOURCE = '/mnt/c/Users/Tudor Brindus/backgrounds/{segment}/'
+BG_SOURCE = '/mnt/backgrounds/{segment}/'
 POLL_TIME_INTERVAL = 10 # seconds
 THEMES = {
     'day': 'NumixBlue',
@@ -51,12 +51,11 @@ def get_day_segment():
 
 def update_wallpaper():
     segment = get_day_segment()
-    segment = 'night'
+
     source = BG_SOURCE.format(segment=segment)
     imgs = os.listdir(source)
-    print imgs
+
     number = int(time.localtime().tm_min / (60.0 / len(imgs)))
-    print time.localtime().tm_min, 60.0/len(imgs)
     source = os.path.join(source, imgs[number])
 
     print 'Switching to %s...' % source
