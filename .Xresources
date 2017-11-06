@@ -2,7 +2,10 @@ Xft.antialias: true
 Xft.hinting:   true
 Xft.rgba:      rgb
 Xft.hintstyle: hintfull
-Xft.dpi:       190
+
+rofi.terminal:				termite
+rofi.ssh-client:			ssh
+rofi.ssh-command:			termite -e "{ssh-client} {host}"
 
 rofi.width:                          50
 rofi.lines:                          15
@@ -29,17 +32,16 @@ rofi.color-urgent:                   argb:0000000, #f3843d, argb:0000000, #268bd
 rofi.color-active:                   argb:0000000, #268bd2, argb:0000000, #268bd2, #205171
 rofi.color-window:                   argb:b2000000, #268bd2, #268bd2
 
-rofi.bw:                             6
-rofi.padding:                        15
+rofi.bw:                             4
+rofi.padding:                        10
 rofi.lazy-filter-limit:              15000
 rofi.line-margin:                    5
 rofi.separator-style:                solid
 rofi.hide-scrollbar:                 true
 rofi.fullscreen:                     false
-rofi.dpi:                            220
+rofi.dpi:                            100
 
 rofi.kb-row-left:                    Control+Page_Up,Control+Left
 rofi.kb-row-right:                   Control+Page_Down,Control+Right
 rofi.kb-row-up:                      Up,Control+p,Shift+Tab,Control+Up
 rofi.kb-row-down:                    Down,Control+n,Control+Down
-
