@@ -1,8 +1,11 @@
 font pango:DejaVu Sans Mono 9
 
-client.focused	#268bd2   #268bd2   #ffffff   #268bd2  #268bd2
+client.focused  #268bd2   #268bd2   #ffffff   #268bd2  #268bd2
 bindsym Mod1+d exec rofi -show run
 bindsym Mod1+g exec rofi -show ssh
+bindsym Mod1+t exec termite -t "file browser" -e ranger
+bindsym Mod1+p exec termite -t "system monitor" -e gtop
+bindsym Mod1+o exec termite -t "task manager" -e htop
 
 gaps inner 20
 gaps outer 5
@@ -14,7 +17,7 @@ set $right semicolon
 
 floating_modifier Mod1
 
-bindsym Mod1+Return exec i3-sensible-terminal
+bindsym Mod1+Return exec termite -d ~
 
 bindsym Mod1+Shift+q kill
 
