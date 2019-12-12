@@ -2,6 +2,7 @@ Xft.antialias: true
 Xft.hinting:   true
 Xft.rgba:      rgb
 Xft.hintstyle: hintfull
+Xft.dpi:        279
 
 rofi.terminal:				termite
 rofi.ssh-client:			ssh
@@ -39,7 +40,7 @@ rofi.line-margin:                    5
 rofi.separator-style:                solid
 rofi.hide-scrollbar:                 true
 rofi.fullscreen:                     false
-rofi.dpi:                            100
+rofi.dpi:                            360
 
 rofi.kb-row-left:                    Control+Page_Up,Control+Left
 rofi.kb-row-right:                   Control+Page_Down,Control+Right

@@ -2,6 +2,8 @@ if command -v bat 2>&1 > /dev/null; then
   alias cat=bat
 fi
 
+stty werase '^H'
+
 export FZF_DEFAULT_OPTS=--no-height
 . ~/.config/key-bindings.bash
 
@@ -26,11 +28,10 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 alias d=ranger
-alias neofetch="neofetch --w3m --size 50% --distro_shorthand on"
+alias neofetch="neofetch --w3m --size 50% --distro_shorthand on --source ~/.config/i3/background.png"
 alias termite="termite -d ~"
 
 export PULSE_SERVER=127.0.0.1
-export TERM=xterm-256color
 export DISPLAY=:0
 
 # If not running interactively, don't do anything
@@ -146,3 +147,4 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+source ~/.scripts/.git-prompt.sh

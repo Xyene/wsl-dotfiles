@@ -4,4 +4,5 @@
 
 # explicitly needed when launching with bash -c from Windows
 source ~/.bashrc
+xrandr --dpi 279
 i3

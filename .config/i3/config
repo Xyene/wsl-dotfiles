@@ -1,4 +1,4 @@
-font pango:DejaVu Sans Mono 10
+font pango:DejaVu Sans Mono 9
 
 client.focused	#268bd2   #268bd2   #ffffff   #268bd2  #268bd2
 bindsym Mod1+d exec exec rofi -show run
@@ -135,7 +135,7 @@ mode "resize" {
 
 bindsym Mod1+r mode "resize"
 
-exec --no-startup-id exec hsetroot -solid black
+exec --no-startup-id exec hsetroot
 exec --no-startup-id exec feh --bg-scale ~/.config/i3/background.png
 exec --no-startup-id exec compton --paint-on-overlay
 exec_always --no-startup-id exec xrdb -load ~/.Xresources
