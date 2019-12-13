@@ -17,7 +17,7 @@ set $right semicolon
 
 floating_modifier Mod1
 
-bindsym Mod1+Return exec exec termite -d ~
+bindsym Mod1+Return exec exec uxterm -e "cd ~ && /bin/bash"
 
 bindsym Mod1+Shift+q kill
 
@@ -108,6 +108,8 @@ bindsym Mod1+Shift+c reload
 bindsym Mod1+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+for_window [class=".*"] border pixel 2
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

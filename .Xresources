@@ -4,9 +4,9 @@ Xft.rgba:      rgb
 Xft.hintstyle: hintfull
 Xft.dpi:        279
 
-rofi.terminal:				termite
+rofi.terminal:				uxterm
 rofi.ssh-client:			ssh
-rofi.ssh-command:			termite -e "{ssh-client} {host}"
+rofi.ssh-command:			uxterm -e "{ssh-client} {host}"
 
 rofi.width:                          50
 rofi.lines:                          15
@@ -36,7 +36,7 @@ rofi.color-window:                   argb:b2000000, #268bd2, #268bd2
 rofi.bw:                             4
 rofi.padding:                        20
 rofi.lazy-filter-limit:              15000
-rofi.line-margin:                    5
+rofi.line-margin:                    8
 rofi.separator-style:                solid
 rofi.hide-scrollbar:                 true
 rofi.fullscreen:                     false
@@ -46,3 +46,68 @@ rofi.kb-row-left:                    Control+Page_Up,Control+Left
 rofi.kb-row-right:                   Control+Page_Down,Control+Right
 rofi.kb-row-up:                      Up,Control+p,Shift+Tab,Control+Up
 rofi.kb-row-down:                    Down,Control+n,Control+Down
+
+
+*.background: #1c1b1a
+
+! special
+*.foreground: #ffffff
+*.foreground_bold: #ffffff
+*.cursorColor: #ffffff
+
+! black
+*.color0: #303030
+*.color8: #5f5f5f
+
+! red
+*.color1: #c03000
+*.color9: #ff0000
+
+! green
+*.color2: #b1d631
+*.color10: #a6cd07
+
+! yellow
+*.color3: #fecf35
+*.color11: #b5c865
+
+! blue
+*.color4: #426870
+*.color12: #4a7781
+
+! magenta
+*.color5: #6d506d
+*.color13: #ff0000
+
+! cyan
+*.color6: #4bb5c1
+*.color14: #4bb5c1
+
+! white
+*.color7: #e2e2e5
+*.color15: #e2e2e5
+
+xterm*faceName: xft:DejaVu Sans Mono
+
+xterm*faceSize1: 5
+xterm*faceSize2: 6
+xterm*faceSize3: 7
+! default
+xterm*faceSize: 8
+xterm*faceSize4: 8
+xterm*faceSize5: 10
+xterm*faceSize6: 12
+
+xterm*termName: xterm-256color
+xterm*ScrollBar: false
+xterm*rightScrollBar: false
+xterm*internalBorder: 16
+
+xterm*selectToClipboard: true
+xterm*VT100.Translations: #override \
+                 Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
+                 Ctrl Shift <Key>C:    copy-selection(CLIPBOARD) \n\
+                 Ctrl <Key>+:          larger-vt-font() \n\
+                 Ctrl <Key>-:          smaller-vt-font()
+! Also want `xset b off` in ~/.bashrc
+xterm*visualBell: false

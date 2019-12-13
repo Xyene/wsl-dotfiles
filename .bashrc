@@ -3,6 +3,7 @@ if command -v bat 2>&1 > /dev/null; then
 fi
 
 stty werase '^H'
+xset b off
 
 export FZF_DEFAULT_OPTS=--no-height
 . ~/.config/key-bindings.bash
@@ -32,7 +33,6 @@ alias neofetch="neofetch --w3m --size 50% --distro_shorthand on --source ~/.conf
 alias termite="termite -d ~"
 
 export PULSE_SERVER=127.0.0.1
-export DISPLAY=:0
 
 # If not running interactively, don't do anything
 case $- in

@@ -3,6 +3,8 @@
 # meant to be run with `bash -c "/path/to/wlaunch"` when running from e.g. a Windows shortcut
 
 # explicitly needed when launching with bash -c from Windows
+export DISPLAY=:0
+#export LIBGL_ALWAYS_INDIRECT=0
 source ~/.bashrc
-xrandr --dpi 279
+#xrandr --dpi 279
 i3

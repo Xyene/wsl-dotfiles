@@ -13,6 +13,7 @@ let g:airline_left_sep=''
 
 syntax on
 
+set cursorline
 set incsearch
 set hlsearch
 set ignorecase
