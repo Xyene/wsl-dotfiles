@@ -3,22 +3,22 @@ allow_bold = true
 #audible_bell = false
 #clickable_url = true
 #dynamic_title = true
-font = Monospace 11
+font = DejaVu Sans Mono 8
 #fullscreen = true
 #geometry = 640x480
-#icon_name = terminal
+icon_name = terminal
 #mouse_autohide = false
 #scroll_on_output = false
 #scroll_on_keystroke = true
 # Length of the scrollback buffer, 0 disabled the scrollback buffer
 # and setting it to a negative value means "infinite scrollback"
-scrollback_lines = 10000
+scrollback_lines = -1
 #search_wrap = true
 #urgent_on_bell = true
 #hyperlinks = false
 
 # $BROWSER is used by default if set, with xdg-open as a fallback
-#browser = xdg-open
+browser = firefox
 
 # "system", "on" or "off"
 cursor_blink = system
@@ -36,7 +36,7 @@ cursor_blink = system
 #size_hints = false
 
 # "off", "left" or "right"
-#scrollbar = off
+scrollbar = poff
 
 [colors]
 # If both of these are unset, cursor falls back to the foreground color,
@@ -49,9 +49,12 @@ cursor_blink = system
 #background = #3f3f3f
 
 # 20% background transparency (requires a compositor)
-background = rgba(0, 0, 0, 0.7)
+# background = rgba(0, 0, 0, 0.7)
+
 
 [colors]
+
+background = #1c1b1a
 
 # special
 foreground      = #ffffff
@@ -89,3 +92,4 @@ color14 = #4bb5c1
 # white
 color7  = #e2e2e5
 color15 = #e2e2e5
+

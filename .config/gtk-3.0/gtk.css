@@ -1,6 +1,7 @@
 VteTerminal,
 TerminalScreen,
-vte-terminal {
-    padding: 1em;
+vte-terminal,
+widget{
+    padding: 0.5em;
     padding-bottom: 0.5em;
 }

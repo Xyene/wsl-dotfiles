@@ -1,11 +1,11 @@
 font pango:DejaVu Sans Mono 9
 
-client.focused  #268bd2   #268bd2   #ffffff   #268bd2  #268bd2
-bindsym Mod1+d exec rofi -show run
-bindsym Mod1+g exec rofi -show ssh
-bindsym Mod1+t exec termite -t "file browser" -e ranger
-bindsym Mod1+p exec termite -t "system monitor" -e gtop
-bindsym Mod1+o exec termite -t "task manager" -e htop
+client.focused	#268bd2   #268bd2   #ffffff   #268bd2  #268bd2
+bindsym Mod1+d exec exec rofi -show run
+bindsym Mod1+g exec exec rofi -show ssh
+bindsym Mod1+t exec exec termite -d ~ -t "file browser" -e ranger
+bindsym Mod1+p exec exec termite -t "system monitor" -e gtop
+bindsym Mod1+o exec exec termite -t "task manager" -e htop
 
 gaps inner 20
 gaps outer 5
@@ -17,7 +17,7 @@ set $right semicolon
 
 floating_modifier Mod1
 
-bindsym Mod1+Return exec termite -d ~
+bindsym Mod1+Return exec exec termite -d ~
 
 bindsym Mod1+Shift+q kill
 
@@ -46,10 +46,10 @@ bindsym Mod1+Shift+Up move up
 bindsym Mod1+Shift+Right move right
 
 # split in horizontal orientation
-bindsym Mod1+h split h
+bindsym Mod1+h split v
 
 # split in vertical orientation
-bindsym Mod1+v split v
+bindsym Mod1+v split h
 
 # enter fullscreen mode for the focused container
 bindsym Mod1+f fullscreen toggle
@@ -135,8 +135,9 @@ mode "resize" {
 
 bindsym Mod1+r mode "resize"
 
-exec --no-startup-id exec hsetroot -solid black
+exec --no-startup-id exec hsetroot
+exec --no-startup-id exec feh --bg-scale ~/.config/i3/background.png
 exec --no-startup-id exec compton --paint-on-overlay
 exec_always --no-startup-id exec xrdb -load ~/.Xresources
 exec_always --no-startup-id exec ~/.scripts/polylaunch
-exec --no-startup-id exec ~/.scripts/walternate
+exec --no-startup-id exec ~/.scripts/wbackground

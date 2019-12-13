@@ -1,14 +1,38 @@
-fortune | cowsay | lolcat
-echo
+if command -v bat 2>&1 > /dev/null; then
+  alias cat=bat
+fi
 
-export PULSE_SERVER=tcp:localhost
+stty werase '^H'
+
+export FZF_DEFAULT_OPTS=--no-height
+. ~/.config/key-bindings.bash
+
+export SSH_ENV="$HOME/.ssh/environment"
+start_agent() {
+  /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}";
+  chmod 600 "${SSH_ENV}";
+  . "${SSH_ENV}" > /dev/null;
+  /usr/bin/ssh-add 2>&1 > /dev/null
+}
+start_agent 2>&1 > /dev/null
+
+export EDITOR=vim
+export GIT_EDITOR=vim
+
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+alias d=ranger
+alias neofetch="neofetch --w3m --size 50% --distro_shorthand on --source ~/.config/i3/background.png"
+alias termite="termite -d ~"
+
+export PULSE_SERVER=127.0.0.1
 export DISPLAY=:0
-
-alias nano="nano -ET4"
-
-PS1='\[\e]0;\u@\h: \w\a\]\[\e[32;1m\]\u@\h:\[\e[34m\]\w\[\e[0m\]\$ '
-
-###################################################################### 
 
 # If not running interactively, don't do anything
 case $- in
@@ -47,6 +71,29 @@ fi
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
+
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+#force_color_prompt=yes
+
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
+    else
+	color_prompt=
+    fi
+fi
+
+if [ "$color_prompt" = yes ]; then
+    PS1='$(__git_ps1 "(%s) ")${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -100,3 +147,4 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+source ~/.scripts/.git-prompt.sh
