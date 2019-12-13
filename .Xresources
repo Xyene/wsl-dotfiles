@@ -11,7 +11,7 @@ rofi.ssh-command:			termite -e "{ssh-client} {host}"
 rofi.width:                          50
 rofi.lines:                          15
 rofi.columns:                        1
-rofi.font:                           DejaVu Sans Mono 11
+rofi.font:                           DejaVu Sans Mono 9
 rofi.fg:                             #002B36
 rofi.bg:                             #FDF6E3
 rofi.fg-active:                      #268BD2
@@ -28,19 +28,19 @@ rofi.hlbg:                           #586E75
 rofi.bc:                             #002B36
 rofi.color-enabled:                  true
 
-rofi.color-normal:                   argb:0000000, #ffffff, argb:0000000, #268bd2, #ffffff
-rofi.color-urgent:                   argb:0000000, #f3843d, argb:0000000, #268bd2, #ffc39c
-rofi.color-active:                   argb:0000000, #268bd2, argb:0000000, #268bd2, #205171
+rofi.color-normal:                   argb:00000000, #ffffff, argb:00000000, #268bd2, #ffffff
+rofi.color-urgent:                   argb:00000000, #f3843d, argb:00000000, #268bd2, #ffc39c
+rofi.color-active:                   argb:00000000, #268bd2, argb:00000000, #268bd2, #205171
 rofi.color-window:                   argb:b2000000, #268bd2, #268bd2
 
 rofi.bw:                             4
-rofi.padding:                        10
+rofi.padding:                        20
 rofi.lazy-filter-limit:              15000
 rofi.line-margin:                    5
 rofi.separator-style:                solid
 rofi.hide-scrollbar:                 true
 rofi.fullscreen:                     false
-rofi.dpi:                            360
+rofi.dpi:                            279
 
 rofi.kb-row-left:                    Control+Page_Up,Control+Left
 rofi.kb-row-right:                   Control+Page_Down,Control+Right
