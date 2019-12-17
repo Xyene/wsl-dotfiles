@@ -10,7 +10,7 @@ from wand.image import Image
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
 
-USERNAME = subprocess.check_call(['/mnt/c/System32/cmd.exe', '/C', 'echo %USERNAME%'])
+USERNAME = subprocess.check_output(['/mnt/c/Windows/System32/cmd.exe', '/C', 'echo %USERNAME%']).strip()
 BACKGROUND = '/mnt/c/Users/%s/AppData/Roaming/Microsoft/Windows/Themes/Transcoded_001' % USERNAME
 RESULT = '/home/xyene/.config/i3/background.png'
 WIDTH = 3840
