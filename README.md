@@ -12,7 +12,7 @@ Included are configuration files and scripts for:
 * time-of-day dependent wallpaper switcher
 * [script to launch VcXsrv and i3 from Windows](https://github.com/Xyene/wsl-dotfiles/blob/master/wsl.vbs)
 
-**When running with a HiDPI display**, make sure to override `VcXsrv.exe`'s default scaling settings to application-controled
+**When running with a HiDPI display**, make sure to override `VcXsrv.exe`'s default scaling settings to application-controlled
 (Compatibility tab of Properties). Otherwise, Windows will incorrectly scale it, capping your X server to around half the
 resolution it should be displaying at (e.g. 1600p instead of 4K).
 
